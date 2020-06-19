@@ -17,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get("/activiteiten", "activiteitenController@index");
+Route::get("/activiteiten/random","activiteitenController@random");
+Route::get("/activiteiten/{id}","activiteitenController@show");
