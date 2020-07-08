@@ -21,3 +21,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get("/activiteiten", "activiteitenController@index");
 Route::get("/activiteiten/random","activiteitenController@random");
 Route::get("/activiteiten/{id}","activiteitenController@show");
+Route::post("/activiteiten/add", "activiteitenController@update");
