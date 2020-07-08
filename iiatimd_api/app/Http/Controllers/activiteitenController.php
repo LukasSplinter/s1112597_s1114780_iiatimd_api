@@ -18,4 +18,11 @@ class activiteitenController extends Controller
     public function random(){
       return Activiteiten::orderByRaw("RAND()")->first();
     }
+
+    public function saveAct(Request $request){
+      $newAct = new Activiteiten();
+      $newAct->activiteit_omschrijving = $request->activiteit_omschrijving;
+
+      $newAct->save();
+    }
 }

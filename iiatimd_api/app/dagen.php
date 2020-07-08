@@ -7,4 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class dagen extends Model
 {
     protected $table = "dagen";
+    public $timestamps = false;
+    
 }

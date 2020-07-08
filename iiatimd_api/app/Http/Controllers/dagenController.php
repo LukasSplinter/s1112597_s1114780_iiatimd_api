@@ -16,4 +16,12 @@ class dagenController extends Controller
     ->whereMonth("datum","=",$maand)
     ->whereDay("datum","=",$dag)->get();
   }
+
+  public function saveDag(Request $request){
+    $newDag = new dagen();
+    $newDag->agenda_item = $request->agenda_item;
+    $newDag->datum = $request->datum;
+
+    $newDag->save();
+  }
 }

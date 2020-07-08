@@ -18,6 +18,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::post("/activiteiten/create","activiteitenController@saveAct");
+Route::post("/agenda/create", "dagenController@saveDag");
+
 Route::get("/activiteiten", "activiteitenController@index");
 Route::get("/activiteiten/random","activiteitenController@random");
 Route::get("/activiteiten/{id}","activiteitenController@show");
