@@ -31,4 +31,8 @@ class activiteitenController extends Controller
         "activiteit_id" => $request->id,
         "activiteit_omschrijving" => $request->activity,
       ]);
+
+    public function delete(Request $request){
+      Activiteiten::where("activiteit_id", "=", $request->position)->delete();
+    }
 }
