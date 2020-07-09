@@ -14,8 +14,8 @@ class CreateDagenTable extends Migration
     public function up()
     {
         Schema::create('dagen', function (Blueprint $table) {
-            $table->id();
-            $table->date("datum");
+            $table->id("agenda_id");
+            $table->Date("datum");
             $table->string("agenda_item");
         });
     }
