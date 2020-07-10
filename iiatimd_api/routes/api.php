@@ -18,8 +18,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post("/activiteiten/create","activiteitenController@saveAct");
+//Route::post("/activiteiten/create","activiteitenController@saveAct");
 Route::post("/agenda/create", "dagenController@saveDag");
+Route::post("/activiteit/create", "activiteitenController@saveAct");
+Route::delete("/activiteiten/delete", "activiteitenController@delete");
 
 Route::get("/activiteiten", "activiteitenController@index");
 Route::get("/activiteiten/random","activiteitenController@random");
@@ -27,5 +29,3 @@ Route::get("/activiteiten/{id}","activiteitenController@show");
 
 Route::get("/agenda", "dagenController@index");
 Route::get("/agenda/{dag}/{maand}/{jaar}", "dagenController@showDag");
-Route::post("/activiteit/create", "activiteitenController@saveAct");
-Route::get("/activiteiten/delete", "activiteitenController@delete");

@@ -27,7 +27,12 @@ class activiteitenController extends Controller
     }
 
     public function delete(Request $request){
-      echo $request + "1";
-      Activiteiten::where("activiteit_id", "=", $request->position)->delete();
+      try {
+        Activiteiten::where("activiteit_id", "=", $request->position)->delete();
+      } catch (\Exception $e) {
+        echo "error";
+      }
+
+
     }
 }
