@@ -24,4 +24,11 @@ class dagenController extends Controller
 
     $newDag->save();
   }
+
+  public function delete($dag, $maand, $jaar, $omschrijving){
+    dagen::whereYear("datum","=",$jaar)
+    ->whereMonth("datum","=",$maand)
+    ->whereDay("datum","=",$dag)
+    ->where("agenda_item","=",$omschrijving)->delete();
+  }
 }
