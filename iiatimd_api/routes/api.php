@@ -27,5 +27,5 @@ Route::get("/activiteiten/{id}","activiteitenController@show");
 
 Route::get("/agenda", "dagenController@index");
 Route::get("/agenda/{dag}/{maand}/{jaar}", "dagenController@showDag");
-Route::post("/activiteiten/add", "activiteitenController@update");
+Route::post("/activiteit/create", "activiteitenController@saveAct");
 Route::get("/activiteiten/delete", "activiteitenController@delete");

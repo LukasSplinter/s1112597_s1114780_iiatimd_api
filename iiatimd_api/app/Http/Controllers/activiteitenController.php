@@ -26,13 +26,6 @@ class activiteitenController extends Controller
       $newAct->save();
     }
 
-    public function update(Request $request){
-      Activiteiten::new([
-        "activiteit_id" => $request->id,
-        "activiteit_omschrijving" => $request->activity,
-      ]);
-    }
-
     public function delete(Request $request){
       echo $request + "1";
       Activiteiten::where("activiteit_id", "=", $request->position)->delete();
